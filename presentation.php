@@ -42,48 +42,42 @@
             </div>
         </nav>
 
+
+<?php
+    $paperid = htmlspecialchars($_GET["paper"]);
+    $paper_json = json_decode(file_get_contents('papers/' . $paperid . '.json'), true);
+?>
+
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="h1">The paper title is shown here.</h1>
-      <p>Bada Kim<br/>
-Department of Computer Engineering, Hansung University, South Korea<br/>
-qkek983@gmail.com</p>
-<p>
-Junyoung Heo<br/>
-Department of Computer Engineering, Hansung University, South Korea<br/>
-jyheo@hansung.ac.kr
-</p>
+      <h1 class="h1"> <?php echo $paper_json["title"] ?> </h1>
+      <?php
+        foreach($paper_json["authors"] as $author) {
+            echo $author . '<br/>';
+        }
+      ?>
+      
 <?php if ( $is_auth ) { ?>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">PDF &raquo;</a></p>
+      <p><a class="btn btn-success btn-sm" href="<?php echo $paper_json["pdf_url"] ?>" role="button">PDF &raquo;</a></p>
 <?php } ?>
     </div>
   </div>
 
   <div class="container">
+    <h3>Presenter: <?php echo $paper_json["presenter"] ?> <a href="mailto:<?php echo $paper_json["presenter_email"] ?>"><i class="fas fa-envelope"></i></a></h3>
     <h3>Abstracts</h3>
         <p>
-        License plate recognition has a recognition rate of more than
-    98% in limited situations; however, the recognition rate
-    sometimes falls to about 50% to 70% in unlimited situations for
-    real time. The inability of filtering out anomaly data which is
-    similar to a license plate results in the low recognition rate. This
-    paper aims to suppress anomaly and improve the recognition
-    rate. CNN consist of as few layers as possible for application
-    with IoT edge technology. As a result of the experiment, the
-    detection rate on real-time roads where situations are unlimited
-    was 77% in normal models with the little filter performance.
-    However, when applying the techniques of this paper, the
-    detection rate was 88%.
-    </p>
+        <?php echo $paper_json["abstracts"] ?>
+        </p>
 
     <hr>
     <?php if ( $is_auth ) { ?>
     <h3>Video Presentation</h3>
     <p>
-    <iframe width="720" height="405" src="https://www.youtube.com/embed/77XmRDtOL7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="720" height="405" src="<?php echo $paper_json["video_url"] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
     <?php } ?>
   </div> <!-- /container -->

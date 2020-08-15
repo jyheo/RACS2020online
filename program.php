@@ -56,7 +56,7 @@
     
     <?php if ( $is_auth ) { ?>
     <h3>System Software</h3>
-        <a href="presentation.php">The paper title is shown here.</a>
+        <a href="presentation.php?paper=100">The paper title is shown here.</a>
     <h3>Security</h3>
     <?php } ?>
   </div> <!-- /container -->

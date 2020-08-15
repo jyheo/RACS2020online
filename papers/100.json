@@ -1,0 +1,12 @@
+{
+    "title" : "The paper tile is...",
+    "video_url" : "https://www.youtube.com/embed/77XmRDtOL7c",
+    "abstracts" : "License plate recognition has a recognition rate of more than 98% in limited situations; however, the recognition rate sometimes falls to about 50% to 70% in unlimited situations for real time. The inability of filtering out anomaly data which is similar to a license plate results in the low recognition rate. This paper aims to suppress anomaly and improve the recognition rate. CNN consist of as few layers as possible for application     with IoT edge technology. As a result of the experiment, the     detection rate on real-time roads where situations are unlimited    was 77% in normal models with the little filter performance.     However, when applying the techniques of this paper, the     detection rate was 88%.",
+    "presenter" : "Bada Kim",
+    "presenter_email" : "qkek983@gmail.com",
+    "authors" : [
+        "Bada Kim, Department of Computer Engineering, Hansung University, South Korea",
+        "Junyoung Heo, Department of Computer Engineering, Hansung University, South Korea"
+    ],
+    "pdf_url" : "#"
+}
