@@ -22,6 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
+                <img src="assets/img/SIGAPP-LOGO.jpg" height="30">&nbsp;
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">RACS2020 Online Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -45,7 +46,8 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">RACS2020</h1>
+                    <h1 class="mx-auto my-0 text-uppercase"><img src="assets/img/acmlogo.png" height="120">
+                    <a href="http://www.sigapp.org/RACS/RACS2020/">RACS2020</a></h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">RACS2020 Online Conference.</h2>
                     <?php if ( $is_auth != TRUE) { ?>
                         <a class="btn btn-primary js-scroll-trigger" href="signin.php">Sing In</a>
