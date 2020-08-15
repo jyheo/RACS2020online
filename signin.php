@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Signin</title>
+    <title>RACS2020 Online Conference</title>
+    <link rel="shortcut icon" href="https://www.acm.org/images/favicon.ico?v=10">
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
