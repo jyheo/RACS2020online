@@ -22,6 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
+                <img src="assets/img/SIGAPP-LOGO.jpg" height="30">&nbsp;
                 <a class="navbar-brand js-scroll-trigger" href="index.php">RACS2020 Online Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -80,12 +81,29 @@
     <iframe width="720" height="405" src="<?php echo $paper_json["video_url"] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
     <?php } ?>
-  </div> <!-- /container -->
+
+    <hr>
+
+    <h3>Discussion (powered by <a href="https://github.com/jyheo/RACS2020online/issues/<?php echo $paper_json["github_issue_id"]; ?>">
+        Github Issues #<?php echo $paper_json["github_issue_id"]; ?></a>)</h3>
+
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Comments</th>   <th>by</th>   <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="github-issues">
+    </tbody>
+    </table>
+
+  </div>
+
 
 </main>
-        
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SIGAPP RACS 2020</div></footer>
+       
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SIGAPP RACS 2020</div></footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -93,5 +111,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+        $(function() {
+            $.getJSON("https://api.github.com/repos/jyheo/RACS2020online/issues/<?php echo $paper_json["github_issue_id"]; ?>/comments", function(result){
+                $.each(result, function(i, field){
+                    $("#github-issues").append('<tr><td>' + '<a href="' + field.html_url + '">' + field.body + '</a></td>' +
+                    '<td><img class="rounded-circle" height="30" src="'+ field.user.avatar_url + '"/> &nbsp;' + field.user.login + '</td>' +
+                    '<td>' + field.updated_at + '</td></tr>');
+                });
+            });
+        });
+        </script>
     </body>
 </html>
