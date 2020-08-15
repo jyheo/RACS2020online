@@ -22,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">RACS2020 Online Conference</a>
+                <a class="navbar-brand js-scroll-trigger" href="index.php">RACS2020 Online Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -41,43 +41,55 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">RACS2020</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">RACS2020 Online Conference.</h2>
-                    <?php if ( $is_auth != TRUE) { ?>
-                        <a class="btn btn-primary js-scroll-trigger" href="signin.php">Sing In</a>
-                    <?php } else { ?>
-                        <a class="btn btn-primary js-scroll-trigger" href="program.php">Program</a>
-                    <?php } ?>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <!--section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
-                        <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/template-overviews/grayscale/">the preview page</a>
-                            . The theme is open source, and you can use it for any purpose, personal or commercial.
-                        </p>
-                    </div>
-                </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="" />
-            </div>
-        </section-->
-        <?php
-        if ( $is_auth ) {
-        ?>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="h1">The paper title is shown here.</h1>
+      <p>Bada Kim<br/>
+Department of Computer Engineering, Hansung University, South Korea<br/>
+qkek983@gmail.com</p>
+<p>
+Junyoung Heo<br/>
+Department of Computer Engineering, Hansung University, South Korea<br/>
+jyheo@hansung.ac.kr
+</p>
+<?php if ( $is_auth ) { ?>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">PDF &raquo;</a></p>
+<?php } ?>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Abstracts</h3>
+        <p>
+        License plate recognition has a recognition rate of more than
+    98% in limited situations; however, the recognition rate
+    sometimes falls to about 50% to 70% in unlimited situations for
+    real time. The inability of filtering out anomaly data which is
+    similar to a license plate results in the low recognition rate. This
+    paper aims to suppress anomaly and improve the recognition
+    rate. CNN consist of as few layers as possible for application
+    with IoT edge technology. As a result of the experiment, the
+    detection rate on real-time roads where situations are unlimited
+    was 77% in normal models with the little filter performance.
+    However, when applying the techniques of this paper, the
+    detection rate was 88%.
+    </p>
+
+    <hr>
+    <?php if ( $is_auth ) { ?>
+    <h3>Video Presentation</h3>
+    <p>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/77XmRDtOL7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+    <?php } ?>
+  </div> <!-- /container -->
+
+</main>
         
-        <?php
-        }
-        ?>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SIGAPP RACS 2020</div></footer>
         <!-- Bootstrap core JS-->
