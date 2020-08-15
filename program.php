@@ -1,5 +1,17 @@
 <?php 
   include 'header.php';
+
+  function paper_info($paperid) {
+    $paper_json = json_decode(file_get_contents('papers/' . $paperid . '.json'), true);
+    echo '<li class="list-group-item">';
+    echo '<a class="list-group-item-text h5" href="presentation.php?paper=' . $paperid . '">' . $paper_json["title"] . '</a><br/>';
+    foreach($paper_json["authors"] as $author) {
+        echo '<i> - ' . $author . '</i><br/>';
+    }
+    echo '</li>';
+  }
+ 
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +34,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
+                <img src="assets/img/SIGAPP-LOGO.jpg" height="30">&nbsp;
                 <a class="navbar-brand js-scroll-trigger" href="index.php">RACS2020 Online Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -48,18 +61,33 @@
   <div class="jumbotron">
     <div class="container">
       <h1 class="h1">Programs</h1>
-      
+      <a href="#systemsw" class="btn btn-primary">System Software</a>
+      <a href="#security" class="btn btn-success">Security</a>
+      <a href="#security" class="btn btn-info">Machine Learning</a>
     </div>
   </div>
 
-  <div class="container">
-    
-    <?php if ( $is_auth ) { ?>
+  <?php if ( $is_auth ) { ?>
+
+  <div class="container" id="systemsw">    
     <h3>System Software</h3>
-        <a href="presentation.php?paper=100">The paper title is shown here.</a>
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <div class="container" id="security">
     <h3>Security</h3>
-    <?php } ?>
-  </div> <!-- /container -->
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <?php } ?>
 
 </main>
         
