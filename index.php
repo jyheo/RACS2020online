@@ -89,5 +89,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDoPmTW6B_CGsPCIX5z-FnsS94xS-LPse0",
+            authDomain: "racs2020online-a7b1f.firebaseapp.com",
+            databaseURL: "https://racs2020online-a7b1f.firebaseio.com",
+            projectId: "racs2020online-a7b1f",
+            storageBucket: "racs2020online-a7b1f.appspot.com",
+            messagingSenderId: "220922775629",
+            appId: "1:220922775629:web:f3ffd7b49487f83d5c7404",
+            measurementId: "G-RDDCSEJPJT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
     </body>
 </html>
