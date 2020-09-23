@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>RACS2020 Online Conference</title>
+        <title>RACS2020 Virtual Conference</title>
         <link rel="shortcut icon" href="https://www.acm.org/images/favicon.ico?v=10">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
                 <img src="assets/img/SIGAPP-LOGO.jpg" height="30">&nbsp;
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">RACS2020 Online Conference</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">RACS2020 Virtual Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -48,7 +48,7 @@
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase"><img src="assets/img/acmlogo.png" height="120">
                     <a href="http://www.sigapp.org/RACS/RACS2020/">RACS2020</a></h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">RACS2020 Online Conference.</h2>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">RACS2020 Virtual Conference.</h2>
                     <?php if ( $is_auth != TRUE) { ?>
                         <a class="btn btn-primary js-scroll-trigger" href="signin.php">Sing In</a>
                     <?php } else { ?>

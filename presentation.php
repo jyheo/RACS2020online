@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>RACS2020 Online Conference</title>
+        <title>RACS2020 Virtual Conference</title>
         <link rel="shortcut icon" href="https://www.acm.org/images/favicon.ico?v=10">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
                 <img src="assets/img/SIGAPP-LOGO.jpg" height="30">&nbsp;
-                <a class="navbar-brand js-scroll-trigger" href="index.php">RACS2020 Online Conference</a>
+                <a class="navbar-brand js-scroll-trigger" href="index.php">RACS2020 Virtual Conference</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>

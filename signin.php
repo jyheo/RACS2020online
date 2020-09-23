@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>RACS2020 Online Conference</title>
+    <title>RACS2020 Virtual Conference</title>
     <link rel="shortcut icon" href="https://www.acm.org/images/favicon.ico?v=10">
 
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -54,7 +54,7 @@
       } ?>
       <img class="mb-4" src="assets/img/SIGAPP-LOGO.jpg" alt="" height="72">
       <h3><a href="http://www.sigapp.org/RACS/RACS2020/">RACS2020</a></h3>
-      Online Conference
+      Virtual Conference
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputUsername" class="sr-only">Username</label>
       <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
