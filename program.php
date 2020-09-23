@@ -60,14 +60,25 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="h1">Programs - WARNING: THIS IS A TEST PAGE</h1>
-      <a href="#systemsw" class="btn btn-primary">System Software</a>
-      <a href="#security" class="btn btn-success">Security</a>
-      <a href="#security" class="btn btn-info">Machine Learning</a>
+      <h1 class="h1">Programs</h1>
+      <p><a href="#keynote" class="btn btn-primary">Keynote Speach</a></p>
+      <p>
+        <a href="#systemsw" class="btn btn-primary">System Software</a>
+        <a href="#security" class="btn btn-success">Security</a>
+        <a href="#security" class="btn btn-info">Machine Learning</a>
+      </p>
     </div>
   </div>
 
   <?php if ( $is_auth ) { ?>
+
+  <div class="container" id="keynote">    
+    <h3>Keynote Speach</h3>
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
 
   <div class="container" id="systemsw">    
     <h3>System Software</h3>

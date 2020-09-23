@@ -61,9 +61,6 @@
         }
       ?>
       
-<?php if ( $is_auth ) { ?>
-      <p><a class="btn btn-success btn-sm" href="<?php echo $paper_json["pdf_url"] ?>" role="button">PDF &raquo;</a></p>
-<?php } ?>
     </div>
   </div>
 
@@ -75,6 +72,14 @@
         </p>
 
     <hr>
+    <?php if (array_key_exists("bio", $paper_json)) { ?>
+    <h3>Bio</h3>
+        <p>
+        <?php echo $paper_json["bio"] ?>
+        </p>
+
+    <hr>
+    <?php } ?>
     <?php if ( $is_auth ) { ?>
     <h3>Video Presentation</h3>
     <p>
