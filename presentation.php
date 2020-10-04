@@ -100,8 +100,12 @@
     <p>
     <iframe width="720" height="405" src="<?php echo $paper_json["video_url"] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
+    <?php } else { ?>
+    <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+    <a class="btn btn-primary js-scroll-trigger" href="signin.php">Sing In</a>
+    </div></div>
     <?php } ?>
-
     <hr>
 
     <h3>Discussion (powered by <a href="https://github.com/jyheo/RACS2020online/issues/<?php echo $paper_json["github_issue_id"]; ?>">

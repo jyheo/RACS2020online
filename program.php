@@ -144,6 +144,11 @@
     <br/>
   </div>
 
+  <?php } else { ?>
+    <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+    <a class="btn btn-primary js-scroll-trigger" href="signin.php">Sing In</a>
+    </div></div>
   <?php } ?>
 
 </main>
