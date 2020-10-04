@@ -4,7 +4,13 @@
   function paper_info($paperid) {
     $paper_json = json_decode(file_get_contents('papers/' . $paperid . '.json'), true);
     echo '<li class="list-group-item">';
-    echo '<a class="list-group-item-text h5" href="presentation.php?paper=' . $paperid . '">' . $paper_json["title"] . '</a><br/>';
+    if (substr($paper_json['video_url'], 0, 4 ) === "http") {
+      echo '(virtual) ';
+      echo '<a class="list-group-item-text h5" href="presentation.php?paper=' . $paperid . '">' . $paper_json["title"] . '</a><br/>';
+    } else {
+      echo '(in-person) ';
+      echo '<span class="list-group-item-text h5">' . $paper_json["title"] . '</span><br/>';
+    }
     foreach($paper_json["authors"] as $author) {
         echo '<i> - ' . $author . '</i><br/>';
     }
@@ -63,12 +69,21 @@
       <h1 class="h1">Programs</h1>
       <p><a href="presentation.php?paper=keynote" class="btn btn-success" style="color:blue">Keynote Speech</a></p>
       <p>
-        <a href="#systemsw" class="btn btn-primary">System Software</a>
-        <a href="#security" class="btn btn-success">Security</a>
-        <a href="#security" class="btn btn-info">Machine Learning</a>
+        <a href="#ssw" class="btn btn-info" style="margin-bottom: 5px;">System Software</a>
+        <a href="#ai" class="btn btn-info" style="margin-bottom: 5px;">AI & Algorithm</a>
+        <a href="#db" class="btn btn-info" style="margin-bottom: 5px;">DB & Data Mining</a>
+        <a href="#se" class="btn btn-info" style="margin-bottom: 5px;">Software Engineering</a>
+        <a href="#net" class="btn btn-info" style="margin-bottom: 5px;">Network Computing</a>
+        <a href="#ps" class="btn btn-info" style="margin-bottom: 5px;">Poster Session</a>
       </p>
     </div>
   </div>
+
+  <style>
+    .toppad {
+      padding-top: 70px;
+    }
+  </style>
 
   <?php if ( $is_auth ) { ?>
 
@@ -79,19 +94,51 @@
     </ul>
     <br/>
   </div>
-
-  <div class="container" id="systemsw">    
-    <h3>System Software</h3>
+  
+  <div class="container" id="ssw">
+    <h3 class="toppad">System Software</h3>
     <ul class="list-group">  
       <?php foreach (array(116, 103, 69, 14, 3, 105, 118, 8, 133, 74, 21, 125, 155, 149, 18, 17, 66) as $p) paper_info($p) ?>
     </ul>
     <br/>
   </div>
 
-  <div class="container" id="security">
-    <h3>Security</h3>
+  <div class="container" id="ai">
+  <h3 class="toppad">Artificial Intelligence & Algorithm</h3>
     <ul class="list-group">
       <?php paper_info(100) ?>
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <div class="container" id="db">
+    <h3 class="toppad">Database & Data Mining</h3>
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <div class="container" id="se">
+    <h3 class="toppad">Software Engineering</h3>
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <div class="container" id="net">
+    <h3 class="toppad">Network Computing</h3>
+    <ul class="list-group">
+      <?php paper_info(100) ?>
+    </ul>
+    <br/>
+  </div>
+
+  <div class="container" id="ps">
+    <h3 class="toppad">Poster Session</h3>
+    <ul class="list-group">
       <?php paper_info(100) ?>
     </ul>
     <br/>
