@@ -61,7 +61,7 @@
   <div class="jumbotron">
     <div class="container">
       <h1 class="h1">Programs</h1>
-      <p><a href="#keynote" class="btn btn-primary">Keynote Speach</a></p>
+      <p><a href="#keynote" class="btn btn-success" style="color:blue">Keynote Speech</a></p>
       <p>
         <a href="#systemsw" class="btn btn-primary">System Software</a>
         <a href="#security" class="btn btn-success">Security</a>
@@ -75,16 +75,15 @@
   <div class="container" id="keynote">    
     <h3>Keynote Speach</h3>
     <ul class="list-group">
-      <?php paper_info(100) ?>
+      <?php paper_info('keynote') ?>
     </ul>
     <br/>
   </div>
 
   <div class="container" id="systemsw">    
     <h3>System Software</h3>
-    <ul class="list-group">
-      <?php paper_info(100) ?>
-      <?php paper_info(100) ?>
+    <ul class="list-group">  
+      <?php foreach (array(116, 103, 69, 14, 3, 105, 118, 8, 133, 74, 21, 125, 155, 149, 18, 17, 66) as $p) paper_info($p) ?>
     </ul>
     <br/>
   </div>

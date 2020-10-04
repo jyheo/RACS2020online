@@ -54,6 +54,9 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
+        <?php if ($paperid == "keynote") { ?>
+        <h1 class="h1" style="color:blue">KEYNOTE SPEECH</h1>
+        <?php } ?>
       <h1 class="h1"> <?php echo $paper_json["title"] ?> </h1>
       <?php
         foreach($paper_json["authors"] as $author) {
@@ -65,21 +68,16 @@
   </div>
 
   <div class="container">
-    <h3>Presenter: <?php echo $paper_json["presenter"] ?> <a href="mailto:<?php echo $paper_json["presenter_email"] ?>"><i class="fas fa-envelope"></i></a></h3>
+    <?php if ($paperid != "keynote") { ?>
+        <h3>Presenter: <?php echo $paper_json["presenter"] ?> <a href="mailto:<?php echo $paper_json["presenter_email"] ?>"><i class="fas fa-envelope"></i></a></h3>
+    <?php } ?>
     <h3>Abstracts</h3>
         <p>
         <?php echo $paper_json["abstracts"] ?>
         </p>
 
     <hr>
-    <?php if (array_key_exists("bio", $paper_json)) { ?>
-    <h3>Bio</h3>
-        <p>
-        <?php echo $paper_json["bio"] ?>
-        </p>
-
-    <hr>
-    <?php } ?>
+    
     <?php if ( $is_auth ) { ?>
     <h3>Video Presentation</h3>
     <p>
@@ -88,6 +86,16 @@
     <?php } ?>
 
     <hr>
+
+    <?php if (array_key_exists("bio", $paper_json)) { ?>
+    <h3>Bio</h3>
+        <p>
+        <?php echo $paper_json["bio"] ?>
+        </p>
+
+    <hr>
+    <?php } ?>
+
 
     <h3>Discussion (powered by <a href="https://github.com/jyheo/RACS2020online/issues/<?php echo $paper_json["github_issue_id"]; ?>">
         Github Issues #<?php echo $paper_json["github_issue_id"]; ?></a>)</h3>

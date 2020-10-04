@@ -10,9 +10,11 @@ for idx, paper in papers.iterrows():
             paper_json = json.load(f)            
     except:
         paper_json = {"title": "null", "video_url": "", "abstracts": "null", "presenter": "", "presenter_email": "", "authors": ["author1", "author2"], "pdf_url": "#", "github_issue_id": 1}
+    paper_json['title'] = paper['Paper Title']
     paper_json['video_url'] = paper['Video URL']
     paper_json['presenter'] = paper['Presenter Name']
-    paper_json['presenter_email'] = paper['Email Address']    
+    paper_json['presenter_email'] = paper['Email Address']
+    paper_json['github_issue_id'] = paper['github']
     json.dump(paper_json, open(fname, 'w'), indent=4)
 
     
