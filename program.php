@@ -61,7 +61,7 @@
   <div class="jumbotron">
     <div class="container">
       <h1 class="h1">Programs</h1>
-      <p><a href="#keynote" class="btn btn-success" style="color:blue">Keynote Speech</a></p>
+      <p><a href="presentation.php?paper=keynote" class="btn btn-success" style="color:blue">Keynote Speech</a></p>
       <p>
         <a href="#systemsw" class="btn btn-primary">System Software</a>
         <a href="#security" class="btn btn-success">Security</a>

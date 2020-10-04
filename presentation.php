@@ -68,6 +68,23 @@
   </div>
 
   <div class="container">
+
+    <?php if (array_key_exists("bio", $paper_json)) { ?>
+    <h3>Bio</h3>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>
+            <?php echo $paper_json["bio"] ?>
+            </p>
+        </div>
+        <div class="col-sm-4">
+        <img src="<?php echo $paper_json["photo_url"] ?>" class="rounded-circle" 
+                width="65%" style="display: block;margin-left: auto;margin-right: auto">
+        </div>
+    </div>
+    <hr>
+    <?php } ?>
+
     <?php if ($paperid != "keynote") { ?>
         <h3>Presenter: <?php echo $paper_json["presenter"] ?> <a href="mailto:<?php echo $paper_json["presenter_email"] ?>"><i class="fas fa-envelope"></i></a></h3>
     <?php } ?>
@@ -86,16 +103,6 @@
     <?php } ?>
 
     <hr>
-
-    <?php if (array_key_exists("bio", $paper_json)) { ?>
-    <h3>Bio</h3>
-        <p>
-        <?php echo $paper_json["bio"] ?>
-        </p>
-
-    <hr>
-    <?php } ?>
-
 
     <h3>Discussion (powered by <a href="https://github.com/jyheo/RACS2020online/issues/<?php echo $paper_json["github_issue_id"]; ?>">
         Github Issues #<?php echo $paper_json["github_issue_id"]; ?></a>)</h3>
