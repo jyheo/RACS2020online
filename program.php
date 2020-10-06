@@ -1,14 +1,18 @@
 <?php 
   include 'header.php';
 
-  function paper_info($paperid) {
+  function paper_info($paperid, $virtual = true) {
     $paper_json = json_decode(file_get_contents('papers/' . $paperid . '.json'), true);
     echo '<li class="list-group-item">';
     if (substr($paper_json['video_url'], 0, 4 ) === "http") {
       echo '(virtual) ';
       echo '<a class="list-group-item-text h5" href="presentation.php?paper=' . $paperid . '">' . $paper_json["title"] . '</a><br/>';
     } else {
-      echo '(in-person) ';
+      if ($virtual) {
+        echo '(virtual) <b style="color:red;">no-show</b> ';
+      } else {
+        echo '(in-person) ';
+      }
       echo '<span class="list-group-item-text h5">' . $paper_json["title"] . '</span><br/>';
     }
     foreach($paper_json["authors"] as $author) {
@@ -96,7 +100,8 @@
   <div class="container" id="ssw">
     <h3 class="toppad">System Software & Networking</h3>
     <ul class="list-group">  
-      <?php foreach (array(5, 15, 16, 17, 67, 68, 71, 8, 14, 18, 105, 125, 3, 136, 144, 145) as $p) paper_info($p) ?>
+      <?php foreach (array(5, 15, 16, 17, 67, 68, 71, 8, 14, 18, 105, 125) as $p) paper_info($p) ?>
+      <?php foreach (array(3, 136, 144, 145) as $p) paper_info($p, false) ?>
     </ul>
     <br/>
   </div>
@@ -107,7 +112,8 @@
   <div class="container" id="ai">
   <h3 class="toppad">Artificial Intelligence & Algorithm</h3>
     <ul class="list-group">
-      <?php foreach (array(21, 22, 69, 70, 150, 117, 118, 2, 9, 155, 146, 149, 151, 154) as $p) paper_info($p) ?>
+      <?php foreach (array(21, 22, 69, 70, 150, 117, 118) as $p) paper_info($p) ?>
+      <?php foreach (array(2, 9, 155, 146, 149, 151, 154) as $p) paper_info($p, false) ?>
     </ul>
     <br/>
   </div>
@@ -116,7 +122,8 @@
   <div class="container" id="db">
     <h3 class="toppad">Database, Data Mining & Software Engineering</h3>
     <ul class="list-group">
-      <?php foreach (array(61, 73, 74, 103, 7, 66, 72, 116, 126, 127, 133, 152) as $p) paper_info($p) ?>
+      <?php foreach (array(61, 73, 74, 103, 7, 66, 72, 116, 126, 127, 133) as $p) paper_info($p) ?>
+      <?php foreach (array(152) as $p) paper_info($p, false) ?>
     </ul>
     <br/>
   </div> 
@@ -125,7 +132,8 @@
   <div class="container" id="ps">
     <h3 class="toppad">Poster Session</h3>
     <ul class="list-group">
-      <?php foreach (array(158, 134, 135, 137, 141, 142, 153, 157) as $p) paper_info($p) ?>
+      <?php foreach (array(158) as $p) paper_info($p) ?>
+      <?php foreach (array(134, 135, 137, 141, 142, 153, 157) as $p) paper_info($p, false) ?>
     </ul>
     <br/>
   </div>
