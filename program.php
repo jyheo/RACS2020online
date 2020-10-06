@@ -69,11 +69,9 @@
       <h1 class="h1">Programs</h1>
       <p><a href="presentation.php?paper=keynote" class="btn btn-success" style="color:blue">Keynote Speech</a></p>
       <p>
-        <a href="#ssw" class="btn btn-info" style="margin-bottom: 5px;">System Software</a>
+        <a href="#ssw" class="btn btn-info" style="margin-bottom: 5px;">System Software & Networking</a>
         <a href="#ai" class="btn btn-info" style="margin-bottom: 5px;">AI & Algorithm</a>
-        <a href="#db" class="btn btn-info" style="margin-bottom: 5px;">DB & Data Mining</a>
-        <a href="#se" class="btn btn-info" style="margin-bottom: 5px;">Software Engineering</a>
-        <a href="#net" class="btn btn-info" style="margin-bottom: 5px;">Network Computing</a>
+        <a href="#db" class="btn btn-info" style="margin-bottom: 5px;">DB, Data Mining & SE</a>
         <a href="#ps" class="btn btn-info" style="margin-bottom: 5px;">Poster Session</a>
       </p>
     </div>
@@ -96,53 +94,42 @@
   </div>
   
   <div class="container" id="ssw">
-    <h3 class="toppad">System Software</h3>
+    <h3 class="toppad">System Software & Networking</h3>
     <ul class="list-group">  
-      <?php foreach (array(116, 103, 69, 14, 3, 105, 118, 8, 133, 74, 21, 125, 155, 149, 18, 17, 66) as $p) paper_info($p) ?>
+      <?php foreach (array(5, 15, 16, 17, 67, 68, 71, 8, 14, 18, 105, 125, 3, 136, 144, 145) as $p) paper_info($p) ?>
     </ul>
     <br/>
   </div>
+
+  
+
 
   <div class="container" id="ai">
   <h3 class="toppad">Artificial Intelligence & Algorithm</h3>
     <ul class="list-group">
-      <?php paper_info(100) ?>
-      <?php paper_info(100) ?>
+      <?php foreach (array(21, 22, 69, 70, 150, 117, 118, 2, 9, 155, 146, 149, 151, 154) as $p) paper_info($p) ?>
     </ul>
     <br/>
   </div>
+ 
 
   <div class="container" id="db">
-    <h3 class="toppad">Database & Data Mining</h3>
+    <h3 class="toppad">Database, Data Mining & Software Engineering</h3>
     <ul class="list-group">
-      <?php paper_info(100) ?>
+      <?php foreach (array(61, 73, 74, 103, 7, 66, 72, 116, 126, 127, 133, 152) as $p) paper_info($p) ?>
     </ul>
     <br/>
-  </div>
+  </div> 
 
-  <div class="container" id="se">
-    <h3 class="toppad">Software Engineering</h3>
-    <ul class="list-group">
-      <?php paper_info(100) ?>
-    </ul>
-    <br/>
-  </div>
-
-  <div class="container" id="net">
-    <h3 class="toppad">Network Computing</h3>
-    <ul class="list-group">
-      <?php paper_info(100) ?>
-    </ul>
-    <br/>
-  </div>
 
   <div class="container" id="ps">
     <h3 class="toppad">Poster Session</h3>
     <ul class="list-group">
-      <?php paper_info(100) ?>
+      <?php foreach (array(158, 134, 135, 137, 141, 142, 153, 157) as $p) paper_info($p) ?>
     </ul>
     <br/>
   </div>
+  
 
   <?php } else { ?>
     <div class="container d-flex h-100 align-items-center">
