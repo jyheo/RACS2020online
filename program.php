@@ -54,6 +54,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li-->
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://tour.gwangju.go.kr/eng/main.cs" target="_">Virtual Tour Gwangju</a></li>
                         <?php if ( $is_auth ) { ?>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="program.php">Program</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="signout.php">Sign Out</a></li>
