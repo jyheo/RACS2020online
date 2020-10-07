@@ -91,7 +91,7 @@
   <?php if ( $is_auth ) { ?>
 
   <div class="container" id="keynote">    
-    <h3>Keynote Speach</h3>
+    <h3>Keynote Speech</h3>
     <ul class="list-group">
       <?php paper_info('keynote') ?>
     </ul>
