@@ -4,17 +4,17 @@
   function paper_info($paperid, $virtual = true) {
     $paper_json = json_decode(file_get_contents('papers/' . $paperid . '.json'), true);
     echo '<li class="list-group-item">';
-    if (substr($paper_json['video_url'], 0, 4 ) === "http") {
+    if ($virtual) {
       echo '(virtual) ';
+    } else {
+      echo '(in-person) ';
+    }
+    if (substr($paper_json['video_url'], 0, 4 ) === "http") {
       echo '<a class="list-group-item-text h5" href="presentation.php?paper=' . $paperid . '">' . $paper_json["title"] . '</a><br/>';
     } else {
-      if ($virtual) {
-        echo '(virtual) <b style="color:red;">no-show</b> ';
-      } else {
-        echo '(in-person) ';
-      }
-      echo '<span class="list-group-item-text h5">' . $paper_json["title"] . '</span><br/>';
+      echo '<b style="color:red;">no-show</b> ';
     }
+    echo '<span class="list-group-item-text h5">' . $paper_json["title"] . '</span><br/>';
     foreach($paper_json["authors"] as $author) {
         echo '<i> - ' . $author . '</i><br/>';
     }
